@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cart - ShopEase</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+  <div class="nav-container">
+    <div class="left-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="aboutUs.html">About</a>
+      <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="right-nav">
+      <input type="text" id="search" placeholder="Search products...">
+    
+    <!-- Profile/Profile Wrap - REPLACES Login/Signup buttons -->
+      <div id="profile-wrap" style="display: none;">
+        <div id="profile-name" class="profile" style="position: relative; cursor: pointer; padding: 8px 12px; border-radius: 8px; background: rgba(255,255,255,0.1);">
+            Hi, Guest ▼
+        </div>
+        <div class="pdrop" style="position: absolute; right: 0; top: 44px; background: #fff; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); padding: 8px; display: none; min-width: 180px; z-index: 1000;">
+            <a href="#" onclick="showProfile()">My Profile</a>
+            <a href="#" onclick="showOrders()">My Orders</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+      </div>
+    
+    <!-- Auth Buttons (shown when NOT logged in) -->
+      <div id="auth-buttons" style="display: flex; gap: 8px;">
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </div>
+
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="mobile-nav-links">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="signup.html">Sign Up</a>
+  </div>
+</nav>
+
+  <main class="container">
+    <h2>Your Cart</h2>
+    <div id="cart-list"></div>
+  </main>
+  <footer class="site-footer">© 2025 ShopEase.</footer>
+  <script src="script.js"></script>
+</body>
+</html>

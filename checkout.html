@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ShopEase</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="left-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html">Cart <span id="cart-count-mini">0</span></a>
+                <a href="aboutUs.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="right-nav">
+                <input type="text" id="search" placeholder="Search products...">
+    
+                <div id="profile-wrap" style="display: none;">
+                    <div id="profile-name" class="profile" style="position: relative; cursor: pointer; padding: 8px 12px; border-radius: 8px; background: rgba(255,255,255,0.1);">
+                    Hi, Guest ▼
+                    </div>
+                    <div class="pdrop" style="position: absolute; right: 0; top: 44px; background: #fff; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); padding: 8px; display: none; min-width: 180px; z-index: 1000;">
+                        <a href="#" onclick="showProfile()">My Profile</a>
+                        <a href="#" onclick="showOrders()">My Orders</a>
+                        <a href="#" onclick="logout()">Logout</a>
+                    </div>
+                </div>
+    
+    <!-- Auth Buttons (shown when NOT logged in) -->
+                <div id="auth-buttons" style="display: flex; gap: 8px;">
+                    <a href="login.html">Login</a>
+                    <a href="signup.html">Sign Up</a>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="header-card">
+            <div>
+                <h1>Checkout</h1>
+                <p>Review your order and complete payment securely.</p>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <!-- Cart Summary -->
+            <section id="cart-summary">
+                <h2>Order Summary</h2>
+                <div id="cart-list"></div>
+                <div style="text-align: right; margin-top: 20px;">
+                    <h3 id="cart-total">Total: $0.00</h3>
+                </div>
+            </section>
+
+            <!-- Billing Details -->
+            <section>
+                <h2>Billing Details</h2>
+                <form id="checkout-form">
+                    <div class="checkout-row">
+                        <div>
+                            <label>Full Name *</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div>
+                            <label>Email *</label>
+                            <input type="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="checkout-row">
+                        <div>
+                            <label>Phone</label>
+                            <input type="tel" name="phone">
+                        </div>
+                        <div>
+                            <label>Pincode *</label>
+                            <input type="text" name="pincode" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Address Line 1 *</label>
+                        <input type="text" name="address1" required>
+                    </div>
+                    <div>
+                        <label>Address Line 2</label>
+                        <input type="text" name="address2">
+                    </div>
+                    <div class="checkout-row">
+                        <div>
+                            <label>City *</label>
+                            <input type="text" name="city" required>
+                        </div>
+                        <div>
+                            <label>State *</label>
+                            <input type="text" name="state" required>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Payment Method -->
+            <section>
+                <h2>Payment Method</h2>
+                <div class="payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="cod" checked>
+                        <span>Cash on Delivery</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="upi">
+                        <span>UPI / Wallet</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="card">
+                        <span>Credit/Debit Card</span>
+                    </label>
+                </div>
+                
+                <!-- Card Fields (Hidden by default) -->
+                <div id="card-fields" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                    <h3>Card Details</h3>
+                    <div class="checkout-row">
+                        <div>
+                            <label>Cardholder Name</label>
+                            <input type="text" name="card-name">
+                        </div>
+                        <div>
+                            <label>Card Number</label>
+                            <input type="text" name="card-number" placeholder="1234 5678 9012 3456">
+                        </div>
+                    </div>
+                    <div class="checkout-row">
+                        <div>
+                            <label>Expiry (MM/YY)</label>
+                            <input type="text" name="expiry" placeholder="12/25">
+                        </div>
+                        <div>
+                            <label>CVV</label>
+                            <input type="text" name="cvv" placeholder="123" maxlength="4">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Order Notes -->
+            <section>
+                <h2>Order Notes (Optional)</h2>
+                <textarea name="notes" rows="3" placeholder="Any special instructions for delivery..."></textarea>
+            </section>
+
+            <!-- Submit Button -->
+            <div style="text-align: right; margin-top: 25px;">
+                <button type="submit" form="checkout-form" class="btn" style="width: 220px;">
+                    Place Order
+                </button>
+            </div>
+        </div>
+
+        <!-- Confirmation -->
+        <div id="checkout-confirm" style="display: none; text-align: center; padding: 40px;">
+            <h2>Order Confirmed!</h2>
+            <p>Thank you for your purchase. A confirmation email has been sent.</p>
+            <a href="index.html" class="btn">Continue Shopping</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        © 2025 ShopEase. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Checkout-specific JS 
+        document.addEventListener('DOMContentLoaded', function() {
+            const paymentRadios = document.querySelectorAll('input[name="payment"]');
+            const cardFields = document.getElementById('card-fields');
+            
+            // Toggle card fields
+            paymentRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    cardFields.style.display = this.value === 'card' ? 'block' : 'none';
+                });
+            });
+
+            // Enhanced checkout form handler
+            const checkoutForm = document.getElementById('checkout-form');
+            const confirm = document.getElementById('checkout-confirm');
+            
+            if (checkoutForm && confirm) {
+                checkoutForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(checkoutForm);
+                    const name = formData.get('name')?.trim();
+                    const email = formData.get('email')?.trim();
+                    const address1 = formData.get('address1')?.trim();
+                    const city = formData.get('city')?.trim();
+                    const state = formData.get('state')?.trim();
+                    const pincode = formData.get('pincode')?.trim();
+                    const payment = formData.get('payment');
+                    
+                    // Validation
+                    if (!name || !email || !address1 || !city || !state || !pincode) {
+                        toast('Please fill all required billing details');
+                        return;
+                    }
+                    
+                    if (payment === 'card') {
+                        const cardNum = formData.get('card-number')?.replace(/\s/g, '');
+                        const expiry = formData.get('expiry')?.trim();
+                        const cvv = formData.get('cvv')?.trim();
+                        
+                        if (cardNum.length < 12) {
+                            toast('Please enter a valid card number');
+                            return;
+                        }
+                        if (!expiry || !cvv || cvv.length !== 3) {
+                            toast('Please enter valid expiry date and CVV');
+                            return;
+                        }
+                    }
+                    
+                    // Clear cart and show confirmation
+                    localStorage.removeItem('shop_cart');
+                    document.getElementById('cart-list').innerHTML = '<p>Your cart is empty.</p>';
+                    document.getElementById('cart-total').textContent = 'Total: $0.00';
+                    checkoutForm.style.display = 'none';
+                    confirm.style.display = 'block';
+                    toast('Order placed successfully!');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

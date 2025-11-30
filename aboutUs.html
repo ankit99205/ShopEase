@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/><title>About Us - ShopEase</title><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>"><link rel="stylesheet" href="style.css" /></head>
+<body>
+  <nav>
+  <div class="nav-container">
+    <div class="left-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="aboutUs.html">About</a> 
+      <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="right-nav">
+        <input type="text" id="search" placeholder="Search products...">
+    
+        <div id="profile-wrap" style="display: none;">
+            <div id="profile-name" class="profile" style="position: relative; cursor: pointer; padding: 8px 12px; border-radius: 8px; background: rgba(255,255,255,0.1);">
+            Hi, Guest ▼
+            </div>
+            <div class="pdrop" style="position: absolute; right: 0; top: 44px; background: #fff; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); padding: 8px; display: none; min-width: 180px; z-index: 1000;">
+                <a href="#" onclick="showProfile()">My Profile</a>
+                <a href="#" onclick="showOrders()">My Orders</a>
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    
+    <!-- Auth Buttons (shown when NOT logged in) -->
+        <div id="auth-buttons" style="display: flex; gap: 8px;">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="mobile-nav-links">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="signup.html">Sign Up</a>
+  </div>
+</nav>
+
+ <main class="container">
+    <div class="header-card">
+        <div style="flex: 1;">
+            <h1>About ShopEase</h1>
+            <p>Your trusted destination for quality products. Built with modern web technologies for seamless shopping experience.</p>
+        </div>
+    </div>
+
+    <div class="form-card" style="max-width: 900px;">
+        <!-- Mission & Vision -->
+        <section style="text-align: center; margin-bottom: 50px;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Our Mission</h2>
+            <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto; line-height: 1.7;">
+                To deliver exceptional shopping experiences through innovative technology, reliable service, and unbeatable value.
+            </p>
+        </section>
+
+        <!-- Company Values -->
+        <section style="margin-bottom: 50px;">
+            <h2 style="text-align: center; margin-bottom: 40px;">Our Core Values</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                <div style="text-align: center; padding: 25px; border-radius: 12px; background: #f8fafc;">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">🎯</div>
+                    <h3>Customer First</h3>
+                    <p>Your satisfaction drives everything we do.</p>
+                </div>
+                <div style="text-align: center; padding: 25px; border-radius: 12px; background: #f8fafc;">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">⚡</div>
+                    <h3>Fast & Reliable</h3>
+                    <p>Lightning-fast delivery you can trust.</p>
+                </div>
+                <div style="text-align: center; padding: 25px; border-radius: 12px; background: #f8fafc;">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">💎</div>
+                    <h3>Quality Guaranteed</h3>
+                    <p>Premium products at honest prices.</p>
+                </div>
+            </div>
+        </section>
+
+        
+<!-- Team Section - REAL ShopEase Roles -->
+<section style="margin-bottom: 50px;">
+    <h2 style="text-align: center; margin-bottom: 40px;">Meet ShopEase Team</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px;">
+        <div style="text-align: center; padding: 25px;">
+            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #ff8800, #ff7700); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; font-weight: bold;">AK</div>
+            <h3>Ankit Kumar</h3>
+            <p style="color: #666; margin-bottom: 10px;">CEO & Founder</p>
+            <p>Leading ShopEase vision and scaling our e-commerce platform to millions.</p>
+        </div>
+        <div style="text-align: center; padding: 25px;">
+            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #fa709a, #fee140); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; font-weight: bold;">AK</div>
+            <h3>Anju Kumari</h3>
+            <p style="color: #666; margin-bottom: 10px;">Customer Success Lead</p>
+            <p>Ensuring every customer has a 5-star shopping experience.</p>
+        </div>
+        <div style="text-align: center; padding: 25px;">
+            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; font-weight: bold;">P</div>
+            <h3>Priyanshu</h3>
+            <p style="color: #666; margin-bottom: 10px;">Head of Design</p>
+            <p>Crafting beautiful, conversion-focused UI/UX for seamless shopping.</p>
+        </div>
+        <div style="text-align: center; padding: 25px;">
+            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #f093fb, #f5576c); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; font-weight: bold;">SS</div>
+            <h3>Sudhanshu Singh</h3>
+            <p style="color: #666; margin-bottom: 10px;">Backend Manager.</p>
+            <p>Managing Databases, Versions & Deployment.</p>
+        </div>
+        <div style="text-align: center; padding: 25px;">
+            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #f093fb, #f5576c); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; font-weight: bold;">RK</div>
+            <h3>Rishi Kumar</h3>
+            <p style="color: #666; margin-bottom: 10px;">Chief Technology Officer</p>
+            <p>Building scalable frontend architecture and payment integrations.</p>
+        </div>
+        <div style="text-align: center; padding: 25px;">
+            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #4facfe, #00f2fe); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; font-weight: bold;">BS</div>
+            <h3>Bhanu Saran</h3>
+            <p style="color: #666; margin-bottom: 10px;">Operations Manager</p>
+            <p>Managing inventory, logistics and nationwide delivery network.</p>
+        </div>
+        <div style="text-align: center; padding: 25px;">
+            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #43e97b, #38f9d7); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; font-weight: bold;">LS</div>
+            <h3>Piyush Bindal</h3>
+            <p style="color: #666; margin-bottom: 10px;">Treasurer</p>
+            <p>Managing Accounts & Human Resources.</p>
+        </div>
+        <div style="text-align: center; padding: 25px;">
+            <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #43e97b, #38f9d7); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; font-weight: bold;">PB</div>
+            <h3>Lokendra Singh</h3>
+            <p style="color: #666; margin-bottom: 10px;">Marketing Director</p>
+            <p>Driving customer acquisition through SEO, ads and partnerships.</p>
+        </div>
+        
+    </div>
+</section>
+
+
+
+        <!-- Tech Stack & College Project Note -->
+        <section style="background: #f8fafc; padding: 30px; border-radius: 12px; text-align: center;">
+            <h2>🚀 Built With</h2>
+            <p style="font-size: 1.1rem; color: #666;">
+                HTML5 • CSS3 • Vanilla JavaScript • Responsive Design • LocalStorage
+            </p>
+            <p style="margin-top: 15px; font-size: 0.95rem; color: #888;">
+                <strong>College Project | November 2025</strong><br>
+                Academic demonstration of modern web development skills.
+            </p>
+        </section>
+    </div>
+</main>
+
+
+  <footer class="site-footer">© 2025 ShopEase.</footer>
+  <script src="script.js"></script>
+</body>
+</html>

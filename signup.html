@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up - ShopEase</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="site-nav"><div class="nav-inner"><div class="brand"><a href="index.html">ShopEase</a></div></div></nav>
+  <main class="container">
+    <div class="form-card" style="max-width:460px;margin:36px auto">
+      <h2>Create Account</h2>
+      <form id="signup-form">
+        <input name="name" type="text" placeholder="Full Name" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="password" type="password" placeholder="Password (min 6 characters)" minlength="6" required>
+        <input name="password2" type="password" placeholder="Repeat Password" minlength="6" required>
+        <button type="submit" class="btn" style="width:100%">Create Account</button>
+      </form>
+      <p style="margin-top:12px;color:#666">Already have an account? <a href="login.html">Sign in now</a></p>
+    </div>
+  </main>
+  <footer class="site-footer">© 2025 ShopEase.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
